@@ -11,7 +11,7 @@ Cuando desarrollamos modelos de crédito, tendemos a obsesionarnos con métricas
 
 ## De la métrica al impacto
 
-La AUC mide la capacidad del modelo para diferenciar entre deudores buenos y malos【954677612423152†L160-L176】. Una AUC de 0.92 indica que el modelo distingue correctamente en un 92 % de los casos, pero no dice nada sobre costos o beneficios. Para traducir la métrica en impacto debemos considerar:
+La AUC mide la capacidad del modelo para diferenciar entre deudores buenos y malos. Una AUC de 0.92 indica que el modelo distingue correctamente en un 92 % de los casos, pero no dice nada sobre costos o beneficios. Para traducir la métrica en impacto debemos considerar:
 
 - **Puntos de corte**: definir umbrales basados en la tolerancia al riesgo y la rentabilidad.
 - **Costos de error**: un falso negativo (no identificar un mal pagador) puede ser más costoso que un falso positivo.
@@ -19,7 +19,7 @@ La AUC mide la capacidad del modelo para diferenciar entre deudores buenos y mal
 
 ## Storytelling con datos
 
-Siguiendo la estructura recomendada para presentar modelos de riesgo【954677612423152†L165-L176】:
+Siguiendo la estructura recomendada para presentar modelos de riesgo:
 
 1. **Contexto**: expón la situación del portafolio de crédito y las implicancias de un modelo deficiente.
 2. **Problema**: define claramente qué se quiere optimizar (mora, fraudes, retención) y por qué las aproximaciones actuales no son suficientes.
