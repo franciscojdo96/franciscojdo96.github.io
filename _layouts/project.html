@@ -1,0 +1,49 @@
+---
+layout: base
+---
+
+<article class="project-page">
+  <header class="page-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: "%d %b %Y" }} • {{ page.industry }} • {{ page.role }}</p>
+    {% if page.metrics %}
+    <p class="meta">Impacto clave: {{ page.metrics }}</p>
+    {% endif %}
+  </header>
+  
+  <!-- Contexto de negocio -->
+  <section class="content-section">
+    <h2>Contexto</h2>
+    {{ page.context | markdownify }}
+  </section>
+  
+  <!-- Problema -->
+  <section class="content-section">
+    <h2>Problema</h2>
+    {{ page.problem | markdownify }}
+  </section>
+  
+  <!-- Solución técnica -->
+  <section class="content-section">
+    <h2>Solución Técnica</h2>
+    {{ page.solution | markdownify }}
+  </section>
+  
+  <!-- Impacto cuantificado -->
+  <section class="content-section">
+    <h2>Impacto</h2>
+    {{ page.impact | markdownify }}
+  </section>
+  
+  <!-- Enlaces adicionales -->
+  {% if page.links %}
+  <section class="content-section">
+    <h2>Recursos</h2>
+    <ul>
+      {% for link in page.links %}
+      <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

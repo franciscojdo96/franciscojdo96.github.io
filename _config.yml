@@ -1,0 +1,21 @@
+title: "Tu Nombre | Data Science & Riesgo Financiero"
+description: "Portafolio y blog profesional centrado en Data Science, Analytics y gestión de riesgo financiero"
+baseurl: "" # la base está en la raíz del repositorio
+url: "" # GitHub Pages completará esta URL automáticamente
+
+# Configuración de colecciones personalizadas para proyectos
+collections:
+  projects:
+    output: true
+    permalink: "/projects/:path/"
+
+markdown: kramdown
+theme: null
+
+# Configuración por defecto para las páginas de proyectos
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project

@@ -1,0 +1,29 @@
+---
+layout: base
+title: "Proyectos"
+description: "Proyectos de data science y riesgo financiero con impacto cuantificable"
+---
+
+<section class="page-header">
+  <h1>Proyectos</h1>
+  <p>Selección de proyectos en Data Science, Analytics y gestión de riesgo. Cada caso incluye contexto de negocio, solución técnica y resultados cuantificables.</p>
+</section>
+
+<section class="projects-list">
+  <div class="projects-grid">
+    {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+    {% for project in sorted_projects %}
+      <div class="project-card">
+        <div class="project-image">
+          {{ project.industry | default: 'Proyecto' }}
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-meta">{{ project.date | date: "%b %Y" }} • {{ project.industry }}</p>
+          <p class="project-description">{{ project.summary | default: project.description | truncate: 140 }}</p>
+          <a href="{{ project.url | relative_url }}" class="project-link">Ver detalles →</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

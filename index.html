@@ -1,0 +1,67 @@
+---
+layout: base
+title: "Inicio"
+description: "Portafolio profesional y blog de Data Science, Analytics y gestión de riesgo financiero"
+---
+
+<!-- Hero principal -->
+<section class="hero">
+  <h1>Potencia tu negocio con Data&nbsp;Science y análisis de riesgo</h1>
+  <p>Transformo datos en decisiones estratégicas. Descubre proyectos que mejoran rentabilidad, reducen riesgos y generan valor cuantificable.</p>
+  <a href="#proyectos" class="cta-button">Ver proyectos</a>
+</section>
+
+<!-- Sección de Impacto -->
+<section class="impact">
+  <div class="impact-item">
+    <h3>+15%</h3>
+    <p>Mejora en detección de fraude en proyectos previos</p>
+  </div>
+  <div class="impact-item">
+    <h3>$1.2M</h3>
+    <p>Ahorro anual estimado gracias a modelos de riesgo</p>
+  </div>
+  <div class="impact-item">
+    <h3>4%</h3>
+    <p>Incremento en retención de clientes tras intervenciones</p>
+  </div>
+</section>
+
+<!-- Listado de proyectos -->
+<section id="proyectos" class="projects">
+  <h2>Proyectos Destacados</h2>
+  <div class="projects-grid">
+    {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+    {% for project in sorted_projects limit:4 %}
+      <div class="project-card">
+        <div class="project-image">
+          <!-- Placeholder de imagen, se puede reemplazar por un gráfico o logo específico -->
+          {{ project.industry | default: 'Proyecto' }}
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-meta">{{ project.date | date: "%b %Y" }} • {{ project.industry }}</p>
+          <p class="project-description">{{ project.summary | default: project.description | truncate: 120 }}</p>
+          <a href="{{ project.url | relative_url }}" class="project-link">Ver detalles →</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <p style="margin-top: 1.5rem; text-align: center;"><a href="{{ '/projects/' | relative_url }}">Ver todos los proyectos →</a></p>
+</section>
+
+<!-- Sección del blog -->
+<section id="blog" class="blog">
+  <h2>Blog Técnico‑Profesional</h2>
+  <ul class="post-list">
+    {% assign recent_posts = site.posts | sort: 'date' | reverse %}
+    {% for post in recent_posts limit:5 %}
+      <li class="post-item">
+        <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
+        <div class="post-date">{{ post.date | date: "%d %b %Y" }}</div>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  <p style="margin-top: 1rem; text-align: center;"><a href="{{ '/blog/' | relative_url }}">Leer todas las entradas →</a></p>
+</section>

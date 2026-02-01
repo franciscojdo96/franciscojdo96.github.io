@@ -1,0 +1,23 @@
+---
+layout: base
+title: "Blog"
+description: "Artículos técnicos y de negocio en Data Science, Analytics y riesgo financiero"
+---
+
+<section class="page-header">
+  <h1>Blog</h1>
+  <p>Publicaciones que combinan análisis técnico con perspectiva de negocio. Cada entrada está pensada para resolver problemas reales y compartir aprendizajes.</p>
+</section>
+
+<section class="blog-list">
+  <ul class="post-list">
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% for post in posts %}
+      <li class="post-item">
+        <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
+        <div class="post-date">{{ post.date | date: "%d %b %Y" }}</div>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
